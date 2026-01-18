@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PAAN CORNER | Feedback</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{--gold:#DAA520;--black:#111;--white:#fff;--bg:#f7f7f8;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:var(--bg);color:var(--black);}
+header{background:var(--black);}
+nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:1rem;}
+nav h2{color:var(--gold);}
+nav a{color:var(--white);margin-left:1rem;text-decoration:none;font-weight:500;}
+nav a:hover{color:var(--gold);}
+
+header{background:var(--black);}
+nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  padding:1rem;
+}
+nav h2{color:var(--gold);}
+nav a{color:#fff;margin-left:1rem;text-decoration:none;}
+nav a:hover{color:var(--gold);}
+
+/* Hero */
+.hero{background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover no-repeat;height:50vh;display:flex;align-items:center;justify-content:center;color:var(--white);text-align:center;}
+.hero h1{font-size:2.8rem;}
+.container{
+  max-width:1100px;
+  margin:3rem auto;
+  padding:0 1rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+}
+
+.card{
+  background:white;
+  padding:2rem;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.card h3{color:var(--gold);margin-bottom:1rem;}
+
+input,textarea{
+  width:100%;
+  padding:.8rem;
+  margin-bottom:1rem;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+textarea{min-height:100px;}
+
+.stars{display:flex;gap:.4rem;margin-bottom:1rem;}
+.stars input{display:none;}
+.stars label{
+  font-size:1.6rem;
+  color:#ccc;
+  cursor:pointer;
+}
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label{
+  color:var(--gold);
+}
+
+button{
+  background:var(--gold);
+  border:none;
+  padding:.8rem 1.6rem;
+  border-radius:30px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* FEEDBACK LIST */
+.feedback-item{
+  border-bottom:1px solid #eee;
+  padding:1rem 0;
+}
+.feedback-item h4{
+  color:var(--gold);
+}
+.feedback-item span{
+  color:#999;
+  font-size:.9rem;
+}
+
+@media(max-width:768px){
+  .container{grid-template-columns:1fr;}
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--black);
+  color:#ccc;
+  text-align:center;
+  padding:3rem 1rem;
+}
+
+footer h3{color:var(--gold);margin-bottom:.5rem;}
+
+.footer-social{
+  margin:1.2rem 0;
+}
+
+.footer-social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  margin:0 .4rem;
+  border-radius:50%;
+  background:#222;
+  color:white;
+  transition:.3s;
+  font-size:1.1rem;
+  text-decoration:none;
+}
+
+.footer-social a:hover{
+  background:var(--gold);
+  color:var(--black);
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:2rem;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+  <h2>PAAN CORNER</h2>
+  
+  <div>
+    <a href="index.html.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="booking.html">Booking</a>
+  </div>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Customer Feedback</h1>
+</section>
+
+<div class="container">
+
+<!-- FORM -->
+<div class="card">
+<h3>Leave Your Feedback</h3>
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<div class="stars">
+  <input type="radio" id="s5" name="rate" value="★★★★★"><label for="s5">★</label>
+  <input type="radio" id="s4" name="rate" value="★★★★"><label for="s4">★</label>
+  <input type="radio" id="s3" name="rate" value="★★★"><label for="s3">★</label>
+  <input type="radio" id="s2" name="rate" value="★★"><label for="s2">★</label>
+  <input type="radio" id="s1" name="rate" value="★"><label for="s1">★</label>
+</div>
+
+<textarea id="message" placeholder="Your feedback..."></textarea>
+
+<button onclick="addFeedback()">Submit</button>
+</div>
+
+<!-- DISPLAY FEEDBACK -->
+<div class="card">
+<h3>Customer Reviews</h3>
+<div id="feedbackList"></div>
+</div>
+
+</div>
+
+<script>
+function addFeedback(){
+  const name = document.getElementById("name").value;
+  const message = document.getElementById("message").value;
+  const rating = document.querySelector('input[name="rate"]:checked');
+
+  if(!name || !message || !rating){
+    alert("Please complete all fields");
+    return;
+  }
+
+  const list = document.getElementById("feedbackList");
+
+  const div = document.createElement("div");
+  div.className = "feedback-item";
+  div.innerHTML = `
+    <h4>${name}</h4>
+    <span>${rating.value}</span>
+    <p>${message}</p>
+  `;
+
+  list.prepend(div);
+
+  // clear form
+  document.getElementById("name").value = "";
+  document.getElementById("message").value = "";
+  document.querySelectorAll('input[name="rate"]').forEach(r=>r.checked=false);
+}
+
+</script>
+<footer>
+  <h3>PAAN CORNER</h3>
+  <p>Affordable Western Food with Premium Taste</p>
+
+  <div class="footer-social">
+    <a href="https://www.facebook.com/paancornerrr?mibextid=rS40aB7S9Ucbxw6v" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/paancorner?igsh=MThvdzU5MG1ya2Jqbg==" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@paancorner?_r=1&_t=ZS-93Ao7UCzECT" target="_blank">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </div>
+</footer>
+</body>
+</html>

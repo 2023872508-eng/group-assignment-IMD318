@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PAAN CORNER | Menu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<style>
+:root{--gold:#DAA520;--black:#111;--white:#fff;--bg:#f7f7f8;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:var(--bg);color:var(--black);}
+header{background:var(--black);}
+nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:1rem;}
+nav h2{color:var(--gold);}
+nav a{color:var(--white);margin-left:1rem;text-decoration:none;font-weight:500;}
+nav a:hover{color:var(--gold);}
+
+/* HEADER */
+header{
+  background:var(--black);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+}
+
+.brand img{
+  width:38px;
+}
+
+.brand span{
+  color:var(--gold);
+  font-weight:700;
+  font-size:1.2rem;
+}
+
+nav a{
+  color:#fff;
+  margin-left:1rem;
+  text-decoration:none;
+  font-weight:500;
+}
+
+nav a:hover{color:var(--gold);}
+
+/* HERO */
+.hero{
+  height:45vh;
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+}
+
+.hero h1{font-size:2.8rem}
+
+/* TABS */
+.tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  justify-content:center;
+  margin:2rem 0;
+}
+
+.tab-btn{
+  padding:.6rem 1.3rem;
+  border-radius:30px;
+  border:none;
+  cursor:pointer;
+  background:var(--gold);
+  font-weight:600;
+}
+
+.tab-btn.active{
+  background:var(--black);
+  color:var(--gold);
+}
+
+/* MENU GRID */
+.menu-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:2rem;
+  padding-bottom:3rem;
+}
+
+.menu-card{
+  background:#fff;
+  border-radius:16px;
+  padding:1rem;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.1);
+  position:relative;
+}
+
+.menu-card img{
+  width:100%;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+.menu-card h3{
+  color:var(--gold);
+  margin:.6rem 0 .3rem;
+}
+
+.price{font-weight:700;}
+
+.badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:var(--gold);
+  padding:.3rem .7rem;
+  border-radius:12px;
+  font-size:.75rem;
+  font-weight:700;
+}
+
+#lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:100;
+}
+
+#lightbox img{
+  max-width:90%;
+  max-height:80%;
+  border-radius:12px;
+}
+
+#lightbox span{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:2rem;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .menu-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:768px){
+  .menu-grid{grid-template-columns:1fr;}
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--black);
+  color:#ccc;
+  text-align:center;
+  padding:3rem 1rem;
+}
+
+footer h3{color:var(--gold);margin-bottom:.5rem;}
+
+.footer-social{
+  margin:1.2rem 0;
+}
+
+.footer-social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  margin:0 .4rem;
+  border-radius:50%;
+  background:#222;
+  color:white;
+  transition:.3s;
+  font-size:1.1rem;
+  text-decoration:none;
+}
+
+.footer-social a:hover{
+  background:var(--gold);
+  color:var(--black);
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:2rem;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+  <h2>PAAN CORNER</h2>
+  
+  <div>
+    <a href="index.html.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="booking.html">Booking</a>
+  </div>
+</nav>
+</header>
+
+
+<section class="hero">
+  <h1>Our Menu</h1>
+</section>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="showMenu('appetizer')">Appetizer</button>
+  <button class="tab-btn" onclick="showMenu('nasinasi')">Nasi</button>
+  <button class="tab-btn" onclick="showMenu('settalam')">Set Talam</button>
+  <button class="tab-btn" onclick="showMenu('main')">Main</button>
+  <button class="tab-btn" onclick="showMenu('burger')">Burger</button>
+  <button class="tab-btn" onclick="showMenu('pasta')">Pasta</button>
+  <button class="tab-btn" onclick="showMenu('snacks')">Snacks</button>
+  <button class="tab-btn" onclick="showMenu('smoothies')">Smoothies</button>
+  <button class="tab-btn" onclick="showMenu('soda')">Soda</button>
+  <button class="tab-btn" onclick="showMenu('drinks')">Drinks</button>
+</div>
+
+<div id="menu-section" class="menu-grid"></div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span>&times;</span>
+  <img id="lightbox-img">
+</div>
+
+<script>
+const menus={
+  appetizer:[
+    {name:'Garlic Bread',price:'RM2.50',img:'image2/appetizer2.jpg',best:true},
+    {name:'Chicken Wings',price:'RM8.00',img:'image2/appetizer1.jpg'},
+    {name:'Grill Salad',price:'RM10.00',img:'image2/appetizer3.jpg'},
+    {name:'Mushroom Soup',price:'RM8.50',img:'image2/appetizer4.jpg'}
+  ],
+  nasinasi:[
+    {name:'Nasi Goreng Kambing',price:'RM17.00',img:'image2/nasi1.jpg'},
+    {name:'Nasi Goreng Samyang',price:'RM12.00',img:'image2/nasi2.jpg'},
+    {name:'Nasi Goreng Chicken Chop',price:'RM14.00',img:'image2/nasi3.jpg',best:true},
+    {name:'Buttermilk Chicken',price:'RM12.00',img:'image2/nasi4.jpg'}
+  ],
+  settalam:[
+    {name:'Talam Bolognese',price:'RM20.50',img:'image2/talam1.png'},
+    {name:'Talam Foldover',price:'RM18.00',img:'image2/talam2.png'},
+    {name:'Talam Pasta',price:'RM19.00',img:'image2/talam3.png'},
+    {name:'Talam Ramen',price:'RM17.50',img:'image2/talam4.png',best:true}
+  ],
+  main:[
+    {name:'Ramen Chop',price:'RM13.00',img:'image2/main1.jpg',best:true},
+    {name:'Lamb Chop',price:'RM17.00',img:'image2/main2.jpg'},
+    {name:'Chicken Chop',price:'RM14.00',img:'image2/main3.jpg'},
+    {name:'Fish & Chips',price:'RM12.00',img:'image2/main4.jpg'}
+  ],
+  burger:[{name:'Beef Burger',price:'RM9.00',img:'image2/burger1.jpg',best:true},
+    {name:'Chicken Burger Crispy ',price:'RM14.00',img:'image2/burger2.avif'},
+    {name:'Chicken Burger Double',price:'RM17.00',img:'image2/burger3.jpg'},
+    {name:'Mozarella Burger',price:'RM14.00',img:'image2/burger4.jpg'}
+  ],
+  pasta:[{name:'Chicken Buttermilk',price:'RM12.00',img:'image2/pasta1.jpg',best:true},
+    {name:'Aglio OlioPasta',price:'RM14.00',img:'image2/pasta2.jpg'},
+    {name:'Spaghetti Bolognese',price:'RM13.00',img:'image2/pasta3.jpg'},
+    {name:'Spaghetti Carbonara',price:'RM13.00',img:'image2/pasta4.jpg'}
+  ],
+  snacks:[{name:'Cheesy Wedges',price:'RM8.00',img:'image2/snacks1.jpg',best:true},
+    {name:'Chicken Wrap',price:'RM7.00',img:'image2/snacks2.jpg'},
+    {name:'French Fries',price:'RM6.00',img:'image2/snacks3.webp'},
+    {name:'Nuggets',price:'RM8.00',img:'image2/snacks4.webp'}
+  ],
+  smoothies:[{name:'Blueberry smoothies',price:'RM10.00',img:'image2/smoothies1.jpg',best:true},
+    {name:'Chocolate smoothies',price:'RM10.00',img:'image2/smoothies2.png'},
+    {name:'Mango smoothies',price:'RM10.00',img:'image2/smoothies3.png'},
+    {name:'Strawberry smoothies',price:'RM10.00',img:'image2/smoothies4.png'}
+  ],
+  soda:[{name:'Blackcurrent Soda',price:'RM9.00',img:'image2/soda1.png',best:true},
+    {name:'Blue Lemon',price:'RM9.00',img:'image2/soda2.avif'},
+    {name:'Lychee Lemon',price:'RM9.00',img:'image2/soda3.png'},
+    {name:'Strawberry Lemon',price:'RM9.00',img:'image2/soda4.jpg'}
+  ],
+  drinks:[{name:'Bandung ais',price:'RM4.00',img:'image2/drinks1.jpg',best:true},
+    {name:'Sirap Laici ais',price:'RM4.50',img:'image2/drinks2.png'},
+    {name:'Teh ais',price:'RM4.00',img:'image2/drinks3.jpg'},
+    {name:'Teh O ais',price:'RM3.00',img:'image2/drinks4.jpg'}]
+};
+
+function showMenu(category){
+  const section=document.getElementById('menu-section');
+  section.innerHTML='';
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`[onclick="showMenu('${category}')"]`).classList.add('active');
+
+  menus[category].forEach(item=>{
+    const card=document.createElement('div');
+    card.className='menu-card';
+    card.innerHTML=`
+      ${item.best?'<div class="badge">Best Seller</div>':''}
+      <img src="${item.img}" onclick="openLightbox('${item.img}')">
+      <h3>${item.name}</h3>
+      <p class="price">${item.price}</p>
+    `;
+    section.appendChild(card);
+  });
+}
+
+showMenu('appetizer');
+
+function openLightbox(src){
+  document.getElementById('lightbox-img').src=src;
+  document.getElementById('lightbox').style.display='flex';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').style.display='none';
+}
+
+
+
+
+</script>
+
+<footer>
+  <h3>PAAN CORNER</h3>
+  <p>Affordable Western Food with Premium Taste</p>
+
+  <div class="footer-social">
+    <a href="https://www.facebook.com/paancornerrr?mibextid=rS40aB7S9Ucbxw6v" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/paancorner?igsh=MThvdzU5MG1ya2Jqbg==" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@paancorner?_r=1&_t=ZS-93Ao7UCzECT" target="_blank">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>

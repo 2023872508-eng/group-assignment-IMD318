@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PAAN CORNER | Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--gold:#DAA520;--black:#111;--white:#fff;--bg:#f7f7f8;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:var(--bg);color:var(--black);}
+header{background:var(--black);}
+nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:1rem;}
+nav h2{color:var(--gold);}
+nav a{color:var(--white);margin-left:1rem;text-decoration:none;font-weight:500;}
+nav a:hover{color:var(--gold);}
+
+/* Hero */
+.hero{background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover no-repeat;height:50vh;display:flex;align-items:center;justify-content:center;color:var(--white);text-align:center;}
+.hero h1{font-size:2.8rem;}
+
+/* Container */
+.container{max-width:1100px;margin:3rem auto;padding:0 1rem;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;}
+.contact-card{background:var(--white);padding:1.5rem;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,.1);}
+.contact-card h3{color:var(--gold);margin-bottom:1rem;}
+.contact-card p, .contact-card label{margin-bottom:.5rem;}
+input,textarea,select{width:100%;padding:.7rem;border-radius:8px;border:1px solid #ddd;margin-bottom:1rem;font-family:'Poppins',sans-serif;}
+textarea{min-height:120px;resize:vertical;}
+.btn{display:inline-block;background:var(--gold);color:var(--black);padding:.8rem 1.5rem;border-radius:30px;font-weight:600;text-decoration:none;transition:.3s;}
+.btn:hover{transform:scale(1.05);}
+/* ===== FOOTER ===== */
+footer{
+  background:var(--black);
+  color:#ccc;
+  text-align:center;
+  padding:3rem 1rem;
+}
+
+footer h3{color:var(--gold);margin-bottom:.5rem;}
+
+.footer-social{
+  margin:1.2rem 0;
+}
+
+.footer-social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  margin:0 .4rem;
+  border-radius:50%;
+  background:#222;
+  color:white;
+  transition:.3s;
+  font-size:1.1rem;
+  text-decoration:none;
+}
+
+.footer-social a:hover{
+  background:var(--gold);
+  color:var(--black);
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:2rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<h2>PAAN CORNER</h2>
+<div>
+<a href="index.html.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="contact.html">Contact</a>
+<a href="feedback.html">Feedback</a>
+<a href="booking.html">Booking</a>
+</div>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Contact Us</h1>
+</section>
+
+<div class="container">
+<div class="contact-grid">
+
+<!-- Branches & Maps -->
+<div class="contact-card">
+<h3>Our Branches</h3>
+<label for="branchSelect">Select Branch:</label>
+<select id="branchSelect">
+<option value="">--Choose Branch--</option>
+<option value="https://www.google.com/maps/place/Pekan+Membunga,+18500+Machang,+Kelantan">Machang Branch</option>
+<option value="https://www.google.com/maps/place/Tanah+Merah,+Kelantan">Tanah Merah Branch</option>
+</select>
+<a class="btn" href="tel:+601151641339">Call Us</a>
+<a class="btn" href="https://wa.me/601151641339" target="_blank">WhatsApp</a>
+</div>
+
+<!-- Contact Form -->
+<div class="contact-card">
+<h3>Send Us a Message</h3>
+<form>
+<label for="name">Name</label>
+<input type="text" id="name" name="name" placeholder="Your full name" required>
+
+<label for="email">Email</label>
+<input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+<label for="phone">Phone</label>
+<input type="tel" id="phone" name="phone" placeholder="011-XXXX XXXX">
+
+<label for="subject">Subject</label>
+<input type="text" id="subject" name="subject" placeholder="Reservation / Inquiry">
+
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Type your message here..."></textarea>
+
+<button type="submit" class="btn">Send Message</button>
+</form>
+</div>
+
+</div>
+</div>
+
+
+<script>
+const select = document.getElementById('branchSelect');
+select.addEventListener('change', ()=>{
+  if(select.value){
+    window.open(select.value,'_blank');
+    select.value = '';
+  }
+});
+</script>
+
+<footer>
+  <h3>PAAN CORNER</h3>
+  <p>Affordable Western Food with Premium Taste</p>
+
+  <div class="footer-social">
+    <a href="https://www.facebook.com/paancornerrr?mibextid=rS40aB7S9Ucbxw6v" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/paancorner?igsh=MThvdzU5MG1ya2Jqbg==" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@paancorner?_r=1&_t=ZS-93Ao7UCzECT" target="_blank">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </div>
+</footer>
+    
+</body>
+</html>
+

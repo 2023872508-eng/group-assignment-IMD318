@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PAAN CORNER | Home</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root{--gold:#DAA520;--black:#111;--white:#fff;--bg:#f7f7f8;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:var(--bg);color:var(--black);}
+
+/* ===== HEADER ===== */
+header{background:var(--black);}
+nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:1rem;}
+nav h2{color:var(--gold);}
+nav a{color:var(--white);margin-left:1rem;text-decoration:none;font-weight:500;}
+nav a:hover{color:var(--gold);}
+
+/* ===== HERO ===== */
+.hero{
+  background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url('https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200')
+    center/cover no-repeat;
+  min-height:50vh;
+  display:flex;
+  align-items:center;
+  color:white;
+  padding:0 2rem;
+}
+
+.hero-content{max-width:600px;}
+.hero h1{font-size:2.6rem;margin-bottom:1rem;}
+.hero p{margin-bottom:1.5rem;}
+
+.btn{
+  display:inline-block;
+  background:var(--gold);
+  color:var(--black);
+  padding:.8rem 1.6rem;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+  transition:.3s;
+}
+.btn:hover{transform:scale(1.05);}
+
+/* ===== INFO CARDS ===== */
+.info-cards{
+  max-width:1100px;
+  margin:-30px auto 3rem;
+  padding:0 1rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1.5rem;
+}
+
+.info-card{
+  background:var(--white);
+  border-radius:18px;
+  padding:1.5rem;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.info-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 30px rgba(0,0,0,.12);
+}
+
+.info-icon{
+  font-size:2rem;
+  margin-bottom:.5rem;
+}
+
+.info-card h4{
+  color:var(--gold);
+  margin-bottom:.4rem;
+}
+
+.map-btn{
+  display:inline-block;
+  margin-top:.8rem;
+  padding:.5rem 1.3rem;
+  border-radius:20px;
+  background:var(--black);
+  color:var(--white);
+  font-size:.85rem;
+  text-decoration:none;
+}
+.map-btn:hover{
+  background:var(--gold);
+  color:var(--black);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--black);
+  color:#ccc;
+  text-align:center;
+  padding:3rem 1rem;
+}
+
+footer h3{color:var(--gold);margin-bottom:.5rem;}
+
+.footer-social{
+  margin:1.2rem 0;
+}
+
+.footer-social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  margin:0 .4rem;
+  border-radius:50%;
+  background:#222;
+  color:white;
+  transition:.3s;
+  font-size:1.1rem;
+  text-decoration:none;
+}
+
+.footer-social a:hover{
+  background:var(--gold);
+  color:var(--black);
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:2rem;}
+}
+</style>
+</head>
+
+<body>
+<header>
+<nav>
+  <h2>PAAN CORNER</h2>
+
+  
+  <div>
+    <a href="index.html.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="booking.html">Booking</a>
+
+  </div>
+</nav>
+</header>
+
+<!-- Background Audio with Play Button -->
+<audio controls>
+  <source src="audio/song.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Delicious Western Food at PAAN CORNER</h1>
+    <p>Generous portions, premium taste & affordable price.</p>
+    <a href="menu.html" class="btn">View Menu</a>
+    <a href="booking.html" class="btn">Reserve Now</a>
+  </div>
+</section>
+
+<div class="info-cards">
+
+  <div class="info-card">
+    <div class="info-icon">⏰</div>
+    <h4>Working Hours</h4>
+    <p>
+      Mon–Thu: 3PM – 11PM<br>
+      Sat–Sun: 3PM – 11PM<br>
+      Friday: Closed
+    </p>
+  </div>
+
+  <div class="info-card">
+    <div class="info-icon">📍</div>
+    <h4>Machang Branch</h4>
+    <p>Pekan Membunga<br>18500 Machang</p>
+    <a class="map-btn" target="_blank"
+      href="https://maps.app.goo.gl/zGQQDktM9oCKPtsy8">
+      Open Maps
+    </a>
+  </div>
+
+  <div class="info-card">
+    <div class="info-icon">📍</div>
+    <h4>Tanah Merah Branch</h4>
+    <p>Tanah Merah<br>Kelantan</p>
+    <a class="map-btn" target="_blank"
+      href="https://maps.app.goo.gl/XCT1RGN5Qaud6JMa6">
+      Open Maps
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <h3>PAAN CORNER</h3>
+  <p>Affordable Western Food with Premium Taste</p>
+
+  <div class="footer-social">
+    <a href="https://www.facebook.com/paancornerrr?mibextid=rS40aB7S9Ucbxw6v" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/paancorner?igsh=MThvdzU5MG1ya2Jqbg==" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@paancorner?_r=1&_t=ZS-93Ao7UCzECT" target="_blank">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </div>
+</footer>
+
+
+</body>
+</html>

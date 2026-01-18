@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PAAN CORNER | Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--gold:#DAA520;--black:#111;--white:#fff;--bg:#f7f7f8;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:var(--bg);color:var(--black);}
+header{background:var(--black);}
+nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:1rem;}
+nav h2{color:var(--gold);}
+nav a{color:var(--white);margin-left:1rem;text-decoration:none;font-weight:500;}
+nav a:hover{color:var(--gold);}
+
+/*hero */
+.hero{background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200') center/cover no-repeat;height:50vh;display:flex;align-items:center;justify-content:center;color:var(--white);text-align:center;}
+.hero h1{font-size:2.8rem;}
+
+
+/* Container & Cards */
+.container{max-width:1100px;margin:3rem auto;padding:0 1rem;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
+.card{background:var(--white);border-radius:16px;padding:1.5rem;box-shadow:0 8px 20px rgba(0,0,0,.1);transition:.3s;text-align:center;}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 25px rgba(0,0,0,.15);}
+.card h3{color:var(--gold);margin-bottom:.5rem;}
+.card p{margin-bottom:.5rem;}
+.card i{font-size:2rem;margin-bottom:0.8rem;color:var(--gold);}
+.btn{display:inline-block;background:var(--gold);color:var(--black);padding:.8rem 1.5rem;border-radius:30px;font-weight:600;margin-top:1rem;text-decoration:none;transition:.3s;}
+.btn:hover{transform:scale(1.05);}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--black);
+  color:#ccc;
+  text-align:center;
+  padding:3rem 1rem;
+}
+
+footer h3{color:var(--gold);margin-bottom:.5rem;}
+
+.footer-social{
+  margin:1.2rem 0;
+}
+
+.footer-social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  margin:0 .4rem;
+  border-radius:50%;
+  background:#222;
+  color:white;
+  transition:.3s;
+  font-size:1.1rem;
+  text-decoration:none;
+}
+
+.footer-social a:hover{
+  background:var(--gold);
+  color:var(--black);
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:2rem;}
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+<nav>
+<h2>PAAN CORNER</h2>
+<div>
+<a href="index.html.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="contact.html">Contact</a>
+<a href="feedback.html">Feedback</a>
+<a href="booking.html">Booking</a>
+</div>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Our Services</h1>
+</section>
+
+<div class="container">
+<h2 style="margin-bottom:2rem;">What We Offer</h2>
+<div class="cards">
+<div class="card">
+<i class="fas fa-utensils"></i>
+<h3>Dine In</h3>
+<p>Enjoy a cozy dining experience at our branches in Machang & Tanah Merah.</p>
+<a class="btn" href="booking.html">Reserve Now</a>
+</div>
+<div class="card">
+<i class="fas fa-bicycle"></i>
+<h3>Delivery</h3>
+<p>Get your favorite PAAN CORNER meals delivered to your doorstep.</p>
+<a class="btn" href="booking.html">Order Now</a>
+</div>
+<div class="card">
+<i class="fas fa-box-open"></i>
+<h3>Takeaway</h3>
+<p>Pick up your orders quickly and conveniently, ready to enjoy anytime.</p>
+<a class="btn" href="booking.html">Place Order</a>
+</div>
+<div class="card">
+<i class="fas fa-handshake"></i>
+<h3>Catering & Events</h3>
+<p>We provide catering for parties, corporate events, and special occasions.</p>
+<a class="btn" href="booking.html">Book Event</a>
+</div>
+</div>
+</div>
+
+<footer>
+  <h3>PAAN CORNER</h3>
+  <p>Affordable Western Food with Premium Taste</p>
+
+  <div class="footer-social">
+    <a href="https://www.facebook.com/paancornerrr?mibextid=rS40aB7S9Ucbxw6v" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/paancorner?igsh=MThvdzU5MG1ya2Jqbg==" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@paancorner?_r=1&_t=ZS-93Ao7UCzECT" target="_blank">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </div>
+</footer>
+</body>
+</html>
